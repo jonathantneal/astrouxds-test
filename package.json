@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "type": "module",
+  "version": "0.1.0",
+  "workspaces": [
+    "packages/*",
+    "sites/*"
+  ],
+  "scripts": {
+    "start": "run-p start:*",
+    "start:demo": "npm run start --workspace sites/demo",
+    "start:dom": "npm run start --workspace packages/dom",
+    "start:components": "npm run start --workspace packages/components",
+    "build": "run-s build:libs build:demo",
+    "build:demo": "npm run build --workspace sites/demo",
+    "build:libs": "npm run build --workspace packages/dom --workspace packages/components",
+    "serve": "run-s build serve:demo",
+    "serve:demo": "npm run serve --workspace sites/demo"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "5.25.0",
+    "@typescript-eslint/parser": "5.25.0",
+    "eslint": "8.15.0",
+    "eslint-config-dev": "3.0.0",
+    "npm-run-all": "4.1.5"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "useTabs": true,
+    "overrides": [
+      {
+        "files": [
+          "*.json",
+          "*.md",
+          "*.stackblitzrc"
+        ],
+        "options": {
+          "useTabs": false
+        }
+      }
+    ]
+  },
+  "private": true
+}

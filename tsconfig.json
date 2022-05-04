@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "moduleResolution": "Node",
+    "module": "ES2022",
+    "declaration": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "jsx": "react",
+    "jsxFactory": "__create",
+    "downlevelIteration": true,
+    "noEmitHelpers": true,
+    "strict": true,
+    "strictBindCallApply": true,
+    "strictFunctionTypes": true,
+    "strictNullChecks": true,
+    "allowUnreachableCode": true,
+    "allowUnusedLabels": true,
+    "exactOptionalPropertyTypes": true,
+    "experimentalDecorators": true,
+    "isolatedModules": true,
+    "preserveConstEnums": true,
+    "preserveValueImports": true,
+    "useDefineForClassFields": true
+  },
+  "include": [
+    "sites/**/*.ts",
+    "packages/**/*.ts",
+    ".lib/*.ts"
+  ]
+}
